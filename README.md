@@ -38,14 +38,41 @@ git submodule update --init --recursive
 # Use CMake to build
 cmake -B build
 cmake --build build
-
 ```
+
+**Scripts** (from repo root):
+
+- `scripts/build.sh` — Configure and build Release.
+- `scripts/run.sh` — Build if needed, then launch the standalone app (macOS: `open BitLink.app`).
+- `scripts/clean.sh` — Remove the `build/` directory.
 
 ## Usage
 
-1. **Load:** Drag and drop any WAV, MP3, or AIFF file into the waveform display. BitLink will immediately apply the "Crunch" settings.
-2. **Slice:** Click "Auto-Slice" to map transients to keys, or manually add slices by Double-Clicking.
-3. **Stretch:** Engage the "Stretch" button and use the dial to change duration without affecting pitch, or vice versa, to achieve that classic 'hoover' or 'rave' vocal texture.
+1. **Load:** Drag and drop any WAV or AIFF file into the waveform display, or use **Load sample**. BitLink applies the Crunch settings on load.
+2. **Preview:** Click and hold on the waveform to audition from that position; release to stop.
+3. **Slice:** Click **Auto-Slice** to map transients to keys (tune with the sensitivity slider). Double-click the waveform to add a slice; right-click to remove one.
+4. **Stretch:** Turn on **Stretch** and use the dial to time-stretch without changing pitch (hoover/rave style).
+5. **Tools:** **Clear**, **Norm**, **Rev**, **Base note**, **Gain** as above.
+6. **Export:** **8SVX** / **WAV** for Amiga or 24-bit WAV.
+7. **Presets:** **Save preset** / **Load preset** store and recall the full state (all settings + sample + slices) as `.bitlinkpreset` files.
+8. **Sound:** **Save sound** / **Load sound** save or load only the current (cropped/sliced) sample as WAV plus a `.bitlink-slices` file for slice positions. Use for moving sounds between projects without full preset data.
+9. **Info / Settings:** Click **Info / Settings** (or press **I**) to open a panel with sample info and a list of **keyboard shortcuts**.
+
+### Keyboard shortcuts
+
+| Key | Action |
+|-----|--------|
+| L | Load sample |
+| C | Clear |
+| A | Auto-Slice |
+| N | Normalize |
+| R | Reverse |
+| 8 | Export 8SVX |
+| W | Export WAV |
+| S | Save sound |
+| Shift+S | Save preset |
+| O | Load preset |
+| I | Toggle Info / Settings panel |
 
 ## Contributing
 
